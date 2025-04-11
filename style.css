@@ -6,7 +6,7 @@ body {
     color: #333;
   }
   header {
-    background: linear-gradient(to right, #00438b, #001831);
+    background: black;
     color: white;
     padding: 30px 0;
     text-align: center;
@@ -69,7 +69,7 @@ body {
 }
 @media(max-width: 600px){
   header {
-    background: linear-gradient(to right, #00438b, #001831);
+    background: black;
     color: white;
     padding: 22px 0;
     text-align: center;
@@ -115,7 +115,7 @@ body {
 
 @media(max-width: 450px){
   header {
-    background: linear-gradient(to right, #00438b, #001831);
+    background: black;
     color: white;
     padding: 20px 0;
     text-align: center;
