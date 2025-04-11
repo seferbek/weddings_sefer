@@ -101,8 +101,8 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
   } 
 .part:hover{
-  background-color: black;
-  color: #DCE5E2;
+  background-color: white;
+  color: black;
 }
 .parts {
   margin-top: 15px;
@@ -146,8 +146,8 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
   } 
 .part:hover{
-  background-color: black;
-  color: #DCE5E2;
+  background-color: white;
+  color: black;
 }
 
 .parts {
