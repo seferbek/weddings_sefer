@@ -52,7 +52,7 @@ body {
     margin-bottom: 10px;
     padding: 10px;
     background: #ffffff;
-    width: 200px;
+    width: 150px;
     border: 1px solid #000000;
     border-radius: 12px; 
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
@@ -71,4 +71,7 @@ body {
 .part{
   width: 150px;
 }
-
+@media(max-width: 450px){
+.part{
+  width: 100px;
+}
