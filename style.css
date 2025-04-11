@@ -52,7 +52,7 @@ body {
     margin-bottom: 10px;
     padding: 10px;
     background: #ffffff;
-    width: 50px;
+    width: 200px;
     border: 1px solid #000000;
     border-radius: 12px; 
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
@@ -66,4 +66,29 @@ body {
 }
 .zoom-effect:hover {
   transform: scale(1.08);
+}
+@media(max-width: 600px){
+  .wedding {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .part {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #ffffff;
+    width: 90%;
+    border: 1px solid #000000;
+    border-radius: 12px; 
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
+  } 
+.part:hover{
+  background-color: black;
+  color: #DCE5E2;
+}
+.zoom-effect{transition: none;}
+.zoom-effect:hover{transform: none;}
 }
