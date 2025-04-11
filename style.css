@@ -67,14 +67,8 @@ body {
 .zoom-effect:hover {
   transform: scale(1.08);
 }
-@media(max-width: 1000px){
-  .part {
-    margin-bottom: 10px;
-    padding: 10px;
-    background: #ffffff;
-      width: 400px;
-    border: 1px solid #000000;
-    border-radius: 12px; 
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
-  } 
+@media(max-width: 600px){
+.part{
+  width: 500px;
+}
 }
