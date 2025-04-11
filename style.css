@@ -67,7 +67,7 @@ body {
 .zoom-effect:hover {
   transform: scale(1.08);
 }
-@media(max-width: 450px){
+@media(max-width: 600px){
       .wedding {
     max-width: 350px;
     margin: 40px auto;
