@@ -68,13 +68,26 @@ body {
   transform: scale(1.08);
 }
 @media(max-width: 600px){
+  header {
+    background: linear-gradient(to right, #00438b, #001831);
+    color: white;
+    padding: 22px 0;
+    text-align: center;
+    font-size: 1.5em;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
   .wedding {
-    max-width: 500px;
+    max-width: 90%;
     margin: 40px auto;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     overflow: hidden;
+  }
+  .wedding h2 {
+    margin-left: 0px;
+    margin-top: 0;
+    color: #011231;
   }
   .part {
     margin-bottom: 10px;
@@ -88,6 +101,55 @@ body {
 .part:hover{
   background-color: black;
   color: #DCE5E2;
+}
+.parts {
+  margin-top: 15px;
+  padding-left: 0px;
+}
+.zoom-effect{transition: none;}
+.zoom-effect:hover{transform: none;}
+}
+
+
+@media(max-width: 450px){
+  header {
+    background: linear-gradient(to right, #00438b, #001831);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1.4em;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  .wedding {
+    max-width: 90%;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  .wedding h2 {
+    margin-left: 0px;
+    margin-top: 0;
+    color: #011231;
+  }
+  .part {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #ffffff;
+    width: 93%;
+    border: 1px solid #000000;
+    border-radius: 12px; 
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
+  } 
+.part:hover{
+  background-color: black;
+  color: #DCE5E2;
+}
+
+.parts {
+  margin-top: 15px;
+  padding-left: 0px;
 }
 .zoom-effect{transition: none;}
 .zoom-effect:hover{transform: none;}
