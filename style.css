@@ -69,7 +69,7 @@ body {
 }
 @media(max-width: 600px){
       .wedding {
-    max-width: 350px;
+    max-width: 450px;
     margin: 40px auto;
     background: #fff;
     border-radius: 12px;
@@ -77,6 +77,6 @@ body {
     overflow: hidden;
   }
 .part{
-  width:300px;
+  width: 200px;
 }
 }
