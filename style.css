@@ -83,6 +83,8 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     overflow: hidden;
+    font-size: 1em;
+
   }
   .wedding h2 {
     margin-left: 0px;
@@ -127,6 +129,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     overflow: hidden;
+    font-size: 1em;
   }
   .wedding h2 {
     margin-left: 0px;
