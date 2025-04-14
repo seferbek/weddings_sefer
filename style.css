@@ -15,6 +15,13 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   }
 
+  .container{
+    background-color: #000000;
+    padding: 2.5%;
+    color: rgba(255, 255, 255, 0.596);
+    text-align: center;
+    font-size: 80%;
+  }
   .wedding {
     max-width: 50%;
     margin: 40px auto;
@@ -55,7 +62,7 @@ body {
     margin-bottom: 10px;
     padding: 10px;
     background: #ffffff;
-    width: 93%;
+    width: 94.5%;
     border: 1px solid #000000;
     border-radius: 12px; 
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
@@ -106,6 +113,13 @@ body {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
     text-align: center;
   } 
+  .container{
+    background-color: #000000;
+    padding: 4.5%;
+    color: rgba(255, 255, 255, 0.596);
+    text-align: center;
+    font-size: 80%;
+  }
 .part:hover{
   background-color: white;
   color: black;
@@ -153,6 +167,13 @@ body {
     text-align: center;
 
   } 
+  .container{
+    background-color: #000000;
+    padding: 5%;
+    color: rgba(255, 255, 255, 0.596);
+    text-align: center;
+    font-size: 80%;
+  }
 .part:hover{
   background-color: white;
   color: black;
