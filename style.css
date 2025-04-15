@@ -8,9 +8,6 @@ body {
   header {
     background: black;
     color: white;
-    margin: 40px auto;
-    max-width: 50%;
-    border-radius: 15px;
     padding: 30px 0;
     text-align: center;
     font-size: 150%;
@@ -28,9 +25,6 @@ body {
     color: rgba(255, 255, 255, 0.649);
     text-align: center;
     font-size: 80%;
-    margin: 40px auto;
-    max-width: 50%;
-    border-radius: 15px;
     padding: 30px 0;
   }
   .wedding {
@@ -94,9 +88,6 @@ body {
   header {
     background: black;
     color: white;
-    margin: 20px auto;
-    max-width: 90%;
-    border-radius: 15px;
     padding: 22px 0;
     text-align: center;
     font-size: 125%;
@@ -129,10 +120,7 @@ body {
   } 
   .container{
     background-color: #000000;
-    margin: 20px auto;
-    max-width: 90%;
-    border-radius: 15px;
-    padding: 30px 0;
+    padding: 4.5;
     color: rgba(255, 255, 255, 0.596);
     text-align: center;
     font-size: 60%;
@@ -154,9 +142,6 @@ body {
   header {
     background: black;
     color: white;
-    margin: 20px auto;
-    max-width: 90%;
-    border-radius: 15px;
     padding: 20px 0;
     text-align: center;
     font-size: 125%;
@@ -189,10 +174,7 @@ body {
   } 
   .container{
     background-color: #000000;
-    margin: 20px auto;
-    max-width: 90%;
-    border-radius: 15px;
-    padding: 30px 0;
+    padding: 5%;
     color: rgba(255, 255, 255, 0.596);
     text-align: center;
     font-size: 60%;
@@ -210,11 +192,11 @@ body {
 .zoom-effect:hover{transform: none;}
 }
 
-/* При переключении на темную тему: */
+/* При переключении на темную тему: 
 @media screen and (prefers-color-scheme: dark) {
   body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #2a2929;
+    background: #000000;
     margin: 0;
     padding: 0;
     color: #ffffff;
@@ -261,7 +243,7 @@ body {
     border: none;
     width: 94.5%;
     border-radius: 10px; 
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
     text-align: center;
     font-size: 125%;
     color: white;
@@ -271,7 +253,7 @@ body {
     color: #000000;
   }
   .nav {
-    background-color: #000000; /* Заменяем на желаемый цвет фона */
+    background-color: #000000;
   }
 
   .container{
@@ -319,7 +301,7 @@ body {
       width: 95%;
       border: none;
       border-radius: 10px; 
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
     } 
     .container{
@@ -377,7 +359,7 @@ body {
       color: white;
       border: none;
       border-radius: 10px; 
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
   
     } 
@@ -403,4 +385,4 @@ body {
   .zoom-effect{transition: none;}
   .zoom-effect:hover{transform: none;}
   }
-} 
+}
