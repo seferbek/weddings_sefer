@@ -11,10 +11,24 @@
   <div class="page-wrapper">
   <header>
     Weddings
-        <!-- Поле для поиска по блокам свадеб -->
+      <div class="search-container">
         <input type="text" id="search" placeholder="Поиск свадьбы" oninput="searchWeddings()">
+        <button id="reset-button" onclick="resetSearch()">✕</button>
+      </div>
   </header>
 <main><section class="wedding">
+  <img src="photo_kaz.png" alt="Казмир">
+  <div class="wedding-content">
+    <h2> Казмир и Карина -  22 июля 2025г.</h2>
+    <div class="parts">
+      <a href = ""> <div class="part zoom-effect" > Часть 1 </div> </a>
+      <a href = "https://rutube.ru/video/private/0ee913310b748ba8213348fd5ff871fc/?p=pjg29iQG1POLFIOgilZbYA"> <div class="part zoom-effect"> Часть 2 </div> </a>
+      <a href = "https://rutube.ru/video/private/229091fb57730abf5bd2c20c799e8cd0/?p=bYgr2_9_iPmZULMlf_Ovsw"> <div class="part zoom-effect"> Часть 3  </div> </a>      
+    </div>
+  </div>
+</section> 
+
+<section class="wedding">
   <img src="photo_zai.png" alt="Заира">
   <div class="wedding-content">
     <h2> Асланбек и Заира -  15 декабря 2024г.</h2>
@@ -90,20 +104,29 @@
   </footer>
 </div>
   <script>
-    function searchWeddings() {
-      const input = document.getElementById('search');
-      const filter = input.value.toLowerCase();
-      const weddings = document.getElementsByClassName('wedding');
+  const input = document.getElementById('search');
+  const resetBtn = document.getElementById('reset-button');
 
-      for (let i = 0; i < weddings.length; i++) {
-        const blockText = weddings[i].textContent.toLowerCase();
-        if (blockText.indexOf(filter) > -1 || filter === "") {
-          weddings[i].style.display = "";
-        } else {
-          weddings[i].style.display = "none";
-        }
-      }
+  input.addEventListener('input', function () {
+    searchWeddings();
+    resetBtn.style.display = this.value ? 'block' : 'none';
+  });
+
+  function searchWeddings() {
+    const filter = input.value.toLowerCase();
+    const weddings = document.getElementsByClassName('wedding');
+
+    for (let i = 0; i < weddings.length; i++) {
+      const blockText = weddings[i].textContent.toLowerCase();
+      weddings[i].style.display = blockText.includes(filter) ? "" : "none";
     }
+  }
+
+  function resetSearch() {
+    input.value = "";
+    searchWeddings();
+    resetBtn.style.display = "none";
+  }
   </script>
 </body>
 </html>
