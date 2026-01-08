@@ -1,213 +1,313 @@
 /* Layout для прижатия футера */
+:root {
+  /* Светлая тема (по умолчанию) */
+  --bg-primary: #fdfaf6;
+  --bg-secondary: #ffffff;
+  --bg-header: #000000;
+  --bg-footer: #000000;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-light: #959595;
+  --text-inverse: #ffffff;
+  --border-color: #00000025;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --hover-bg: #000000;
+  --hover-text: #DCE5E2;
+  --input-bg: #ffffff;
+  --input-border: #cccccc;
+}
+
+[data-theme="dark"] {
+  /* Темная тема - более мягкие границы */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-header: #000000;
+  --bg-footer: #000000;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-light: #888888;
+  --text-inverse: #ffffff;
+  --border-color: #303030; /* Более мягкий цвет границы */
+  --shadow-color: rgba(0, 0, 0, 0.25);
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --hover-bg: #2a2a2a; /* Более мягкий цвет при наведении */
+  --hover-text: #ffffff;
+  --input-bg: #2a2a2a;
+  --input-border: #404040; /* Более мягкая граница для инпутов */
+}
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .page-wrapper {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-primary);
 }
 
 main {
   flex: 1;
 }
+
 * {
   box-sizing: inherit;
 }
+
 /* Футер */
 footer.container {
-  background-color: #000000;
+  background-color: var(--bg-footer);
   text-align: center;
   font-size: 0.9rem;
-  color: #959595;
-  border-top: 1px solid #ddd;
+  color: var(--text-light);
+  border-top: 1px solid var(--border-color);
+  transition: all 0.3s ease;
 }
-.footer-container{
-  background-color: #000000;
+
+.footer-container {
+  background-color: var(--bg-footer);
   text-align: center;
   font-size: 0.7rem;
-  color: #959595;
-  border-top: 1px solid #ddd;
+  color: var(--text-light);
+  border-top: 1px solid var(--border-color);
   padding: 20px;
   margin: 40px auto;
   margin-top: 0;
-  width: 52%;
+  width: 50%;
   padding: 1.5rem 2rem;
   border-radius: 30px;
+  transition: all 0.3s ease;
 }
+
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #fdfaf6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--bg-primary);
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  background: var(--bg-header);
+  color: var(--text-inverse);
+  padding: 30px 0;
+  text-align: center;
+  font-size: 150%;
+  font-weight: bold;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  transition: all 0.3s ease;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: var(--bg-footer);
+  color: rgba(255, 255, 255, 0.649);
+  text-align: center;
+  font-size: 80%;
+  padding: 30px 0;
+  transition: all 0.3s ease;
+}
+
+.wedding {
+  max-width: 50%;
+  margin: 40px auto;
+  background: var(--bg-secondary);
+  border-radius: 30px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  font-size: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .wedding {
+  border: 1px solid var(--border-color); /* Более тонкая граница */
+}
+
+.wedding img {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.wedding-content {
+  padding-bottom: 2%;
+}
+
+header {
+  margin: 40px auto;
+  margin-bottom: 0;
+  width: 50%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  border-radius: 30px;
+}
+
+header::before {
+  content: "";
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #444;
+  flex: 1 1 100%;
+  margin-bottom: 0.5rem;
+  display: none;
+}
+
+input#search {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 15px;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 0%;
+  max-width: 100%;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  transition: all 0.3s ease;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] input#search {
+  border: 1px solid var(--border-color); /* Более мягкая граница */
+}
+
+input#search:focus {
+  outline: none;
+  border-color: var(--text-light);
+}
+
+@media(max-width: 1450px) {
   header {
-    background: black;
-    color: white;
-    padding: 30px 0;
-    text-align: center;
-    font-size: 150%;
-    font-weight: bold;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    width: 70%;
   }
-  p{
-    margin: 0;
-    padding: 0;
+  
+  .footer-container {
+    width: 70%;
   }
-  .container{
-    background-color: #000000;
-    color: rgba(255, 255, 255, 0.649);
-    text-align: center;
-    font-size: 80%;
-    padding: 30px 0;
-  }
+  
   .wedding {
-    max-width: 52%;
-    margin: 40px auto;
-    background: #fff;
-    border-radius: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    overflow: hidden;
-    font-size: 100%;
+    max-width: 70%;
   }
+}
 
-  .wedding img {
-    width: 100%;
-    height: auto;
-    display: flex;
-  }
+.wedding h2 {
+  color: var(--text-primary);
+  max-width: 91%;
+  margin: 2% auto;
+  font-size: 140%;
+  text-align: center;
+}
 
-  .wedding-content {
-    padding-bottom: 2%;
-  }
+.search-container {
+  position: relative;
+  display: inline-block;
+}
 
-  header {
-    margin: 40px auto;
-    margin-bottom: 0;
-    width: 52%;
-    padding: 1.5rem 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    position: relative;
-    top: 0;
-    z-index: 1000;
-    border-radius: 30px;
-  }
-  
-  header::before {
-    content: "";
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #444;
-    flex: 1 1 100%;
-    margin-bottom: 0.5rem;
-    display: none;
-  }
-  
-  input#search {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    font-size: 1rem;  
-    width: 100%;
-    margin-top: 0%;
-    max-width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: 0.3s;
-  }
-  
-  input#search:focus {
-    outline: none;
-    border-color: #888;
-  }
-  @media(max-width: 1450px){
-    header{
-      width: 70%;
-    }
-    .footer-container{
-      width: 70%;
-    }
-    .wedding{
-      max-width: 70%;
-    }
-  }
-  
-  .wedding h2 {
-    color: #000000;
-    max-width: 91%;
-    margin: 2% auto;
-    font-size: 140%;
-    text-align: center;
-  }
-  .search-container {
-    position: relative;
-    display: inline-block;
-  }
-  
-  #search {
-    padding: 6px 30px 6px 10px; /* справа место под кнопку */
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-  
-  #reset-button {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    font-size: 18px;
-    color: #888;
-    cursor: pointer;
-    display: none;
-  }
-  
-  #reset-button:hover {
-    color: #e74c3c;
-  }
-  
-  .parts {
-    margin-top: 0px;
-    padding-left: 0px;
-  }
-  a { text-decoration: none; color: #000000;}
-  a:visited {
-    text-decoration: none;
-    color: black;
-  }
-  .part {
-    padding: 10px;
-    margin: 1% auto;
-    background: #ffffff;
-    width: 91%;
-    border: 1.7px solid #00000025;
-    border-radius: 20px; 
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
-    text-align: center;
-    font-size: 1.25em;
-    font-weight: 500;
-  } 
-  .part:hover{
-    background-color: black;
-    color: #DCE5E2;
-  }
-  .zoom-effect {
-    transition: transform 0,5s ease;
-  }
-  .zoom-effect:hover {
-    transform: scale(1.04);
-  }
+#search {
+  padding: 6px 30px 6px 10px;
+  font-size: 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+}
 
+#reset-button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: var(--text-light);
+  cursor: pointer;
+  display: none;
+  transition: color 0.3s ease;
+}
+
+#reset-button:hover {
+  color: #e74c3c;
+}
+
+.parts {
+  margin-top: 0px;
+  padding-left: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.part {
+  padding: 10px;
+  margin: 1% auto;
+  background: var(--bg-secondary);
+  width: 91%;
+  border: 1.7px solid var(--border-color);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 500;
+}
+
+[data-theme="dark"] .part {
+  border: 1.5px solid var(--border-color); /* Более тонкая граница */
+}
+
+.part:hover {
+  background-color: var(--hover-bg);
+  color: var(--hover-text);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px var(--shadow-color);
+}
+
+[data-theme="dark"] .part:hover {
+  background-color: var(--hover-bg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Более мягкая тень */
+}
+
+.part:hover a {
+  color: var(--hover-text);
+}
+
+.zoom-effect {
+  transition: transform 0.3s ease;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.04);
+}
+
+[data-theme="dark"] .zoom-effect:hover {
+  transform: scale(1.02); /* Более скромное увеличение для темной темы */
+}
 
 /* Адаптив для мобильных устройств */
 @media (max-width: 768px) {
@@ -220,47 +320,47 @@ body {
     padding: 1.5rem 2rem;
     border-radius: 0;
   }
+  
   input#search {
     padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border);
     border-radius: 15px;
-    font-size: 1rem;  
+    font-size: 1rem;
     margin-top: 3%;
     max-width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    background-color: var(--input-bg);
+    color: var(--text-primary);
   }
+  
   #reset-button {
     font-size: 18px;
     right: 13%;
     top: 60%;
   }
+  
   .search-container {
     max-width: 100%;
   }
-
-  #reset-button {
-    font-size: 18px;
-    right: 13%;
-    top: 60%;
-  }
+  
   header::before {
     display: block;
   }
-
+  
   footer.container {
-    background-color: #000000;
+    background-color: var(--bg-footer);
     text-align: center;
     font-size: 0.9rem;
-    color: #959595;
-    border-top: 1px solid #ddd;
+    color: var(--text-light);
+    border-top: 1px solid var(--border-color);
   }
-  .footer-container{
-    background-color: #000000;
+  
+  .footer-container {
+    background-color: var(--bg-footer);
     text-align: center;
     font-size: 0.7rem;
-    color: #959595;
-    border-top: 1px solid #ddd;
+    color: var(--text-light);
+    border-top: 1px solid var(--border-color);
     padding: 20px;
     margin: auto;
     margin-bottom: 15px;
@@ -269,352 +369,191 @@ body {
     border-radius: 30px;
   }
 }
-@media(max-width: 600px){
+
+@media (max-width: 600px) {
   header {
-    background: black;
-    color: white;
+    background: var(--bg-header);
+    color: var(--text-inverse);
     padding: 10px 0;
     text-align: center;
     font-size: 125%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px var(--shadow-color);
     width: 92%;
     margin: auto;
     margin-top: 15px;
     border-radius: 30px;
   }
-
+  
   #reset-button {
     font-size: 18px;
     right: 13%;
     top: 60%;
   }
+  
   .wedding {
     max-width: 90%;
     margin: 20px auto;
-    background: #fff;
+    background: var(--bg-secondary);
     border-radius: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: var(--card-shadow);
     overflow: hidden;
     font-size: 90%;
   }
+  
   .wedding h2 {
-    color: #000000;
+    color: var(--text-primary);
     max-width: 92%;
     margin: 0.5% auto;
     font-size: 140%;
   }
-  .wedding-content{
+  
+  .wedding-content {
     padding: 10px;
   }
+  
   .part {
     margin: 2.5% auto;
-    background: #ffffff;
+    background: var(--bg-secondary);
     width: 90%;
-    border: 1.8px solid #00000025;
-    border-radius: 16px; 
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
+    border: 1.8px solid var(--border-color);
+    border-radius: 16px;
+    transition: all 0.3s ease;
     text-align: center;
-  } 
-  .container{
-    background-color: #000000;
+  }
+  
+  .container {
+    background-color: var(--bg-footer);
     padding: 4.5;
     color: rgba(255, 255, 255, 0.596);
     text-align: center;
     font-size: 60%;
   }
-.part:hover{
-  background-color: white;
-  color: black;
+  
+  .part:hover {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
+  }
+  
+  .parts {
+    margin-top: 0px;
+    padding-left: 0px;
+  }
+  
+  .zoom-effect {
+    transition: none;
+  }
+  
+  .zoom-effect:hover {
+    transform: none;
+  }
+  
+  input#search {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--input-border);
+    border-radius: 15px;
+    font-size: 1rem;
+    margin-top: 3%;
+    margin-bottom: 4%;
+    max-width: 100%;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+  }
 }
-.parts {
-  margin-top: 0px;
-  padding-left: 0px;
-}
-.zoom-effect{transition: none;}
-.zoom-effect:hover{transform: none;}
 
-input#search {
-  padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  font-size: 1rem;  
-  margin-top: 3%;
-  margin-bottom: 4%;
-  max-width: 100%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-}
-
-
-@media(max-width: 450px){
+@media (max-width: 450px) {
   header {
-    background: rgb(0, 0, 0);
-    color: white;
+    background: var(--bg-header);
+    color: var(--text-inverse);
     padding: 10px 0px;
     text-align: center;
     font-size: 125%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px var(--shadow-color);
     width: 92%;
     margin: auto;
     margin-top: 15px;
     border-radius: 30px;
   }
+  
   #reset-button {
     font-size: 18px;
     right: 13%;
     top: 60%;
   }
+  
   input#search {
     padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border);
     border-radius: 15px;
-    font-size: 1rem;  
+    font-size: 1rem;
     margin-top: 3%;
     margin-bottom: 4%;
     width: 300px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    background-color: var(--input-bg);
+    color: var(--text-primary);
   }
+  
   .wedding {
     max-width: 92%;
     margin: 20px auto;
-    background: #fff;
+    background: var(--bg-secondary);
     border-radius: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: var(--card-shadow);
     overflow: hidden;
     font-size: 80%;
     padding-bottom: 1%;
   }
+  
   .wedding h2 {
-    color: #000000;
-    max-width: 92%; 
+    color: var(--text-primary);
+    max-width: 92%;
     margin: 0.5% auto;
     font-size: 140%;
   }
+  
   .wedding-content {
-    padding:  2.5%;
+    padding: 2.5%;
   }
+  
   .part {
-    background: #ffffff;
+    background: var(--bg-secondary);
     width: 90%;
-    border: 1.7px solid #00000025;
-    border-radius: 16px; 
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для фона, трансформации и тени */
+    border: 1.7px solid var(--border-color);
+    border-radius: 16px;
+    transition: all 0.3s ease;
     text-align: center;
     margin: 2.5% auto;
-  } 
-  .container{
-    background-color: #000000;
+  }
+  
+  .container {
+    background-color: var(--bg-footer);
     padding: 5%;
     color: rgba(255, 255, 255, 0.596);
     text-align: center;
     font-size: 60%;
   }
-  .part:hover{
-    background-color: rgb(255, 255, 255);
-    color: black;
+  
+  .part:hover {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
   }
-
+  
   .parts {
     margin-top: 0px;
     padding-left: 0px;
   }
-  .zoom-effect{transition: none;}
-  .zoom-effect:hover{transform: none;}
+  
+  .zoom-effect {
+    transition: none;
+  }
+  
+  .zoom-effect:hover {
+    transform: none;
+  }
 }
 
-/* При переключении на темную тему: 
-@media screen and (prefers-color-scheme: dark) {
-  body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: #000000;
-    margin: 0;
-    padding: 0;
-    color: #ffffff;
-  }
-  header {
-    background: #121212;
-    color: white;
-    margin: 40px auto;
-    max-width: 50%;
-    border-radius: 15px;
-    text-align: center;
-    font-size: 150%;
-    font-weight: bold;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  }
-  .wedding {
-    max-width: 50%;
-    margin: 40px auto;
-    background: #121212;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    overflow: hidden; 
-    font-size: 100%;
-  }
-  .wedding h2 { 
-    margin-left: 0px;
-    margin-top: 0;
-    color: #ffffff;
-  }
-  .parts {
-    margin-top: 15px;
-    padding-left: 20px;
-  }
-  a { text-decoration: none; color: #000000;}
-  a:visited {
-    text-decoration: none;
-    color: black;
-  }
-  .part {
-    margin-bottom: 10px;
-    padding: 10px;
-    background: #252525;
-    color: white;
-    border: none;
-    width: 94.5%;
-    border-radius: 10px; 
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
-    text-align: center;
-    font-size: 125%;
-    color: white;
-  } 
-  .part:hover{
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-  }
-  .nav {
-    background-color: #000000;
-  }
-
-  .container{
-    background-color: #121212;
-    margin: 40px auto;
-    max-width: 50%;
-    border-radius: 15px;
-    padding: 30px 0;
-    color: rgba(255, 255, 255, 0.596);
-    text-align: center;
-    font-size: 80%;
-  }
-
-  @media(max-width: 600px){
-    header {
-      background: 121212;
-      color: white;
-      text-align: center;
-      font-size: 125%;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      margin: 20px auto;
-      max-width: 90%;
-      border-radius: 15px;
-    }
-    .wedding {
-      max-width: 90%;
-      margin: 20px auto;
-      background: #121212;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      overflow: hidden;
-      font-size: 90%s;
-  
-    }
-    .wedding h2 {
-      margin-left: 0px;
-      margin-top: 0;
-      color: #ffffff;
-    }
-    .part {
-      margin-bottom: 10px;
-      padding: 10px;
-      background: #252525;
-      color: white;
-      width: 95%;
-      border: none;
-      border-radius: 10px; 
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-    } 
-    .container{
-      background-color: #121212;
-      margin: 20px auto;
-      max-width: 90%;
-      border-radius: 15px;
-      padding: 30px 0;
-      color: rgba(255, 255, 255, 0.596);
-      text-align: center;
-      font-size: 60%;
-    }
-  .part:hover{
-    background-color: #252525;
-    color: white;
-  }
-  .parts {
-    margin-top: 15px;
-    padding-left: 0px;
-  }
-  .zoom-effect{transition: none;}
-  .zoom-effect:hover{transform: none;}
-  }
-  
-  @media(max-width: 450px){
-    header {
-      background: #121212;
-      color: white;
-      margin: 20px auto;
-      max-width: 90%;
-      border-radius: 15px;
-      text-align: center;
-      font-size: 125%;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    .wedding {
-      max-width: 90%;
-      margin: 20px auto;
-      background: #121212;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      overflow: hidden;
-      font-size: 90%;
-    }
-    .wedding h2 {
-      margin-left: 0px;
-      margin-top: 0;
-      color: #ffffff;
-    }
-    .part {
-      margin-bottom: 10px;  
-      padding: 10px;
-      background: #252525;
-      width: 93%;
-      color: white;
-      border: none;
-      border-radius: 10px; 
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-  
-    } 
-    .container{
-      background-color: #121212;
-      margin: 20px auto;
-      max-width: 90%;
-      border-radius: 15px;
-      padding: 30px 0;
-      color: rgba(255, 255, 255, 0.596);
-      text-align: center;
-      font-size: 60%;
-    }
-  .part:hover{
-    background-color: #252525;
-    color: rgb(255, 255, 255);
-  }
-  
-  .parts {
-    margin-top: 15px;
-    padding-left: 0px;
-  }
-  .zoom-effect{transition: none;}
-  .zoom-effect:hover{transform: none;}
-  }
-} */
+/* Плавный переход для всех элементов */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
