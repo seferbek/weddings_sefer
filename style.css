@@ -20,7 +20,7 @@
 
 [data-theme="dark"] {
   /* Темная тема - более мягкие границы */
-  --bg-primary: #000000;
+  --bg-primary: #101010;
   --bg-secondary: #151515;
   --bg-header: #151515;
   --bg-footer: #151515;
