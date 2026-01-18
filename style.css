@@ -149,12 +149,8 @@ p {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 39px 39px 50px 50px;
+  border-radius: 50px 50px 50px 50px;
   border: 1px solid var(--border-color);
-}
-
-[data-theme="dark"] .wedding img {
-  border-radius: 39px 39px 50px 50px;
 }
 
 .wedding-content {
@@ -201,10 +197,6 @@ input#search:focus {
   
   .wedding {
     max-width: 70%;
-  }
-  
-  .wedding img {
-    border-radius: 39px 39px 50px 50px;
   }
 }
 
@@ -359,10 +351,6 @@ a:visited {
     padding: 1.5rem 2rem;
     border-radius: 100px;
   }
-  
-  .wedding img {
-    border-radius: 29px 29px 40px 40px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -396,7 +384,7 @@ a:visited {
   }
   
   .wedding img {
-    border-radius: 29px 29px 40px 40px;
+    border-radius: 40px 40px 40px 40px;
   }
   
   .wedding h2 {
@@ -503,10 +491,14 @@ a:visited {
     font-size: 80%;
     padding-bottom: 1%;
   }
-  
+
   .wedding img {
-    border-radius: 29px 29px 40px 40px;
-  }
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 40px 40px 40px 40px;
+  border: 1px solid var(--border-color);
+}
   
   .wedding h2 {
     color: var(--text-primary);
