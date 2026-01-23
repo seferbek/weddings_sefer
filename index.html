@@ -14,6 +14,11 @@
   <meta name="msapplication-navbutton-color" content="#fdfaf6" id="ms-navbutton">
   <meta name="msapplication-TileColor" content="#fdfaf6" id="ms-tilecolor">
   
+  <!-- Предзагрузка первых изображений -->
+  <link rel="preload" href="photo_bat.jpg" as="image">
+  <link rel="preload" href="photo_mai.jpg" as="image">
+  <link rel="preload" href="photo_bislan.png" as="image">
+  
   <title>Свадьбы</title>
   
   <link rel="stylesheet" href="style.css">
@@ -41,7 +46,7 @@
     
     <main>
       <section class="wedding">
-        <img src="photo_bat.jpg" alt="Батыр">
+        <img src="photo_bat.jpg" alt="Батыр" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2> Батыр и Маина - 27 августа 2025г. Свадьба жениха.</h2>
           <div class="parts">
@@ -52,7 +57,7 @@
       </section> 
 
       <section class="wedding">
-        <img src="photo_mai.jpg" alt="Маина">
+        <img src="photo_mai.jpg" alt="Маина" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2> Батыр и Маина - 25 августа 2025г. Свадьба невесты.</h2>
           <div class="parts">
@@ -63,7 +68,7 @@
       </section> 
 
       <section class="wedding">
-        <img src="photo_bislan.png" alt="Батыр">
+        <img src="photo_bislan.png" alt="Бислан" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2> Бислан и Расмина - 15 августа 2025г.</h2>
           <div class="parts">
@@ -74,7 +79,7 @@
       </section> 
 
       <section class="wedding">
-        <img src="photo_mar.png" alt="Марсель">
+        <img src="photo_mar.png" alt="Марсель" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2> Марсель и Рейхан - 14 августа 2025г.</h2>
           <div class="parts">
@@ -85,7 +90,17 @@
       </section> 
 
       <section class="wedding">
-        <img src="photo_kaz.png" alt="Казмир">
+        <img src="photo_faina.jpg" alt="Фаина" loading="lazy" decoding="async">
+        <div class="wedding-content">
+          <h2> Расул и Фаина - 2 августа 2025г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/a58a72d23ed1fccd31cdd635cb28d231/?p=b30fu7wrJogQYZsfZcl65w"> <div class="part zoom-effect" > Запустить </div> </a>    
+          </div>
+        </div>
+      </section> 
+
+      <section class="wedding">
+        <img src="photo_kaz.png" alt="Казмир" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2> Казмир и Карина - 22 июля 2025г.</h2>
           <div class="parts">
@@ -97,7 +112,7 @@
       </section> 
 
       <section class="wedding">
-        <img src="photo_zai.png" alt="Заира">
+        <img src="photo_zai.png" alt="Заира" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2> Асланбек и Заира -  15 декабря 2024г.</h2>
           <div class="parts">
@@ -108,7 +123,7 @@
       </section> 
 
       <section class="wedding">
-        <img src="photo_zam.jpg" alt="Замир и Сабина">
+        <img src="photo_zam.jpg" alt="Замир и Сабина" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2>Замир и Сабина -  30 октября 2024г.</h2>
           <div class="parts">
@@ -120,7 +135,7 @@
       </section>
 
       <section class="wedding">
-        <img src="photo_ira.jpg" alt="Волкхан и Ирада">
+        <img src="photo_ira.jpg" alt="Волкхан и Ирада" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2>Волкхан и Ирада -  23 февраля 2024г.</h2>
           <div class="parts">
@@ -132,7 +147,7 @@
       </section>
 
       <section class="wedding">
-        <img src="photo_anz.jpg" alt="Анзор и Тоина">
+        <img src="photo_anz.jpg" alt="Анзор и Тоина" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2>Анзор и Тоина - 14 октября 2021г.</h2>
           <div class="parts">
@@ -143,7 +158,7 @@
       </section>
 
       <section class="wedding">
-        <img src="photo_kema.jpg" alt="Кемран и Амина">
+        <img src="photo_kema.jpg" alt="Кемран и Амина" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2>Кемран и Амина - 21 июля 2021г.</h2>
           <div class="parts">
@@ -155,7 +170,7 @@
       </section>
 
       <section class="wedding">
-        <img src="photo_rav.jpg" alt="Равиль и Эвелина">
+        <img src="photo_rav.jpg" alt="Равиль и Эвелина" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2>Равиль и Эвелина - 21 июля 2020г.</h2>
           <div class="parts">
@@ -166,7 +181,7 @@
       </section>
 
       <section class="wedding">
-        <img src="photo_ram.jpg" alt="Рамиль и Амина">
+        <img src="photo_ram.jpg" alt="Рамиль и Амина" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2>Рамиль и Амина - 23 августа 2018г.</h2>
           <div class="parts">
@@ -176,7 +191,7 @@
       </section>
 
       <section class="wedding">
-        <img src="photo_nai.jpg" alt="Рашид и Наима">
+        <img src="photo_nai.jpg" alt="Рашид и Наима" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2>Рашид и Наима - 24 августа 2017г.</h2>
           <div class="parts">
@@ -188,7 +203,7 @@
       </section>
 
       <section class="wedding">
-        <img src="photo_nili.jpg" alt="Заур и Нилима">
+        <img src="photo_nili.jpg" alt="Заур и Нилима" loading="lazy" decoding="async">
         <div class="wedding-content">
           <h2>Заур и Нилима - 8 августа 2010г.</h2>
           <div class="parts">
