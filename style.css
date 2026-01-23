@@ -225,7 +225,7 @@ input#search:focus {
 #reset-button {
   position: absolute;
   right: 3.5%;
-  top: 47.75%;
+  top: 50%;
   background-color: transparent;
   transform: translateY(-50%);
   border: none;
@@ -258,7 +258,7 @@ input#search:focus {
 [data-theme="dark"] #reset-button{
   position: absolute;
   right: 3.5%;
-  top: 47.75%;
+  top: 50%;
   background-color: transparent;
   transform: translateY(-50%);
   border: none;
