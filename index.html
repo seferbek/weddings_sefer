@@ -3,257 +3,343 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Статус бар для iOS -->
+  <!-- Статус бар для iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   
-  <!-- Статус бар для Android -->
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <!-- Статус бар для Android и браузеров -->
+  <meta name="theme-color" content="#fdfaf6" id="theme-color-meta">
   
   <!-- Для Windows и браузеров -->
-  <meta name="msapplication-navbutton-color" content="#ffffff">
-  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-navbutton-color" content="#fdfaf6" id="ms-navbutton">
+  <meta name="msapplication-TileColor" content="#fdfaf6" id="ms-tilecolor">
+  
   <title>Свадьбы</title>
   
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Дополнительные стили для вычисления цвета */
+    .color-extractor {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
+  <div class="color-extractor" id="bg-primary-color"></div>
+  
   <div class="page-wrapper">
-  <header>
-    Weddings
+    <header>
+      Weddings
       <div class="search-container">
         <input type="text" id="search" placeholder="Поиск свадьбы" oninput="searchWeddings()">
+        <button id="reset-button" onclick="resetSearch()">✕</button>
       </div>
-  </header>
-<main>
+    </header>
+    
+    <main>
+      <section class="wedding">
+        <img src="photo_bat.jpg" alt="Батыр">
+        <div class="wedding-content">
+          <h2> Батыр и Маина - 27 августа 2025г. Свадьба жениха.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/f703b617985ed4c37f5a2fae18670a8d/?p=MPiSfAdPxzrFTGoo6l48zA"> <div class="part zoom-effect" > Часть 1 </div> </a>
+            <a href = "https://rutube.ru/video/private/21944048689f4ae9c73b3fc4248427ed/?p=iBy-9qkOF2BxEy5l4fYQcA"> <div class="part zoom-effect"> Часть 2 </div> </a>     
+          </div>
+        </div>
+      </section> 
 
-<section class="wedding">
-  <img src="photo_bat.jpg" alt="Батыр">
-  <div class="wedding-content">
-    <h2> Батыр и Маина - 27 августа 2025г. Свадьба жениха.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/f703b617985ed4c37f5a2fae18670a8d/?p=MPiSfAdPxzrFTGoo6l48zA"> <div class="part zoom-effect" > Часть 1 </div> </a>
-      <a href = "https://rutube.ru/video/private/21944048689f4ae9c73b3fc4248427ed/?p=iBy-9qkOF2BxEy5l4fYQcA"> <div class="part zoom-effect"> Часть 2 </div> </a>     
-    </div>
+      <section class="wedding">
+        <img src="photo_mai.jpg" alt="Маина">
+        <div class="wedding-content">
+          <h2> Батыр и Маина - 25 августа 2025г. Свадьба невесты.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/2b5d4bd1dbc9c17217baf0b43713ae1e/?p=6qTa9eWW8NKznlZiUDYpmQ"> <div class="part zoom-effect" > Часть 1 </div> </a>
+            <a href = "https://rutube.ru/video/private/d681891b4878dc8b620113934f5671e8/?p=iH0Gn75xk6FTIRGafeg2xQ"> <div class="part zoom-effect"> Часть 2 </div> </a>     
+          </div>
+        </div>
+      </section> 
+
+      <section class="wedding">
+        <img src="photo_bislan.png" alt="Батыр">
+        <div class="wedding-content">
+          <h2> Бислан и Расмина - 15 августа 2025г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/82edad01331b452610bde174bc6f921d/"> <div class="part zoom-effect" > Часть 1 </div> </a>
+            <a href = "https://rutube.ru/video/b4167e6bb7642f8c40bae754c6990b7a/"> <div class="part zoom-effect"> Часть 2 </div> </a>     
+          </div>
+        </div>
+      </section> 
+
+      <section class="wedding">
+        <img src="photo_mar.png" alt="Марсель">
+        <div class="wedding-content">
+          <h2> Марсель и Рейхан - 14 августа 2025г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/02f0c72c2facdb863dce7762d1617377/?p=CwLSopUyIzEE-RugZz0scA"> <div class="part zoom-effect" > Часть 1 </div> </a>
+            <a href = "https://rutube.ru/video/private/98e75c63d82851bb1f9b1d8f7dbfa0fe/?p=k7p88WlrY4LY-2T0FwPNHg"> <div class="part zoom-effect"> Часть 2 </div> </a>     
+          </div>
+        </div>
+      </section> 
+
+      <section class="wedding">
+        <img src="photo_kaz.png" alt="Казмир">
+        <div class="wedding-content">
+          <h2> Казмир и Карина - 22 июля 2025г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/11705f94d96df8e9da96da46e65a3b5d/?p=bJc5oyBBMtlh-Bk9t-mJ8w"> <div class="part zoom-effect" > Часть 1 </div> </a>
+            <a href = "https://rutube.ru/video/private/0ee913310b748ba8213348fd5ff871fc/?p=pjg29iQG1POLFIOgilZbYA"> <div class="part zoom-effect"> Часть 2 </div> </a>
+            <a href = "https://rutube.ru/video/private/229091fb57730abf5bd2c20c799e8cd0/?p=bYgr2_9_iPmZULMlf_Ovsw"> <div class="part zoom-effect"> Часть 3  </div> </a>      
+          </div>
+        </div>
+      </section> 
+
+      <section class="wedding">
+        <img src="photo_zai.png" alt="Заира">
+        <div class="wedding-content">
+          <h2> Асланбек и Заира -  15 декабря 2024г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/8e51d2921599d52d28d5faafc94f9871/?p=dWYx0ztCMW093vO0BH2Rnw"> <div class="part zoom-effect" > Часть 1 </div> </a>
+            <a href = "https://rutube.ru/video/private/48b4768c7f8f347d2af0d3f45b1cfd94/?p=bi0cP7zU90GZkXc1Y3EAYw"> <div class="part zoom-effect"> Часть 2 </div> </a>
+          </div>
+        </div>
+      </section> 
+
+      <section class="wedding">
+        <img src="photo_zam.jpg" alt="Замир и Сабина">
+        <div class="wedding-content">
+          <h2>Замир и Сабина -  30 октября 2024г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/929f613fd4a6ffa13ec0bd55f305459a/?p=GXF5qA8h3xYqgoG8xrd1Ug"> <div class="part zoom-effect" > Часть 1 </div> </a>
+            <a href = "https://rutube.ru/video/private/70496a33eb41ee8997891b03b07964ca/?p=7rvhbCg8ngx8WaxInmjxjQ"> <div class="part zoom-effect"> Часть 2 </div> </a>
+            <a href = "https://rutube.ru/video/private/e24fda4f243126b988443ead3fc71c51/?p=Cder2HGthhmqsJ7ogVR5xQ"> <div class="part zoom-effect"> Часть 3 </div> </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wedding">
+        <img src="photo_ira.jpg" alt="Волкхан и Ирада">
+        <div class="wedding-content">
+          <h2>Волкхан и Ирада -  23 февраля 2024г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/e836fbdde40caac12a5932c47a038e80/?p=4299H4ushM9qVTELnmDYKw"> <div class="part zoom-effect" >Часть 1</div> </a>
+            <a href = "https://rutube.ru/video/private/c802d494713fd351ddd64f55f91d86ba/?p=YiN4G-bZW5PsZrQKGwD_PA"> <div class="part zoom-effect">Часть 2</div> </a>
+            <a href = "https://rutube.ru/video/private/933607348c2262be7014215f104bfc42/?p=UR8nXtGot1KiwLujRVP8Dw"> <div class="part zoom-effect">Часть 3</div> </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wedding">
+        <img src="photo_anz.jpg" alt="Анзор и Тоина">
+        <div class="wedding-content">
+          <h2>Анзор и Тоина - 14 октября 2021г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/dde636985db291f99f98ee406f680608/?p=pxkpHn502idFwg39IcaL3Q"> <div class="part zoom-effect">Часть 1</div> </a>
+            <a href = "https://rutube.ru/video/private/eaecbad233a400b7c36e8c65544ebe16/?p=_7zybyuCj-qOLmPqjZNxVg"> <div class="part zoom-effect">Часть 2</div> </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wedding">
+        <img src="photo_kema.jpg" alt="Кемран и Амина">
+        <div class="wedding-content">
+          <h2>Кемран и Амина - 21 июля 2021г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/b3ceaca3a05198886c0dd9d7eb65686f/?p=F5nvK6WvNUBWGGlXprVrMg"> <div class="part zoom-effect">Часть 1</div> </a>
+            <a href = "https://rutube.ru/video/private/9117dba18f14175c71e3c5b7ae1e2e61/?p=hGpi-JPnxThsR6qEKFaIrg"> <div class="part zoom-effect">Часть 2</div> </a>
+            <a href = "https://rutube.ru/video/private/5fcf79fdafb257dba9393b7c4538f2c8/?p=zZzq2j5JIfaigdALzHjmpw"> <div class="part zoom-effect">Часть 3</div> </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wedding">
+        <img src="photo_rav.jpg" alt="Равиль и Эвелина">
+        <div class="wedding-content">
+          <h2>Равиль и Эвелина - 21 июля 2020г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/9feb1fe032a98513bf87c135e5bd5ed7/?p=-CeVJ6zRJlQNJDNeUtKPIQ"> <div class="part zoom-effect">Часть 1</div> </a>
+            <a href = "https://rutube.ru/video/private/acec46bfaa709cee261c96369e7c463b/?p=E6bWNR-SCYXWoXL-QHxLCA"> <div class="part zoom-effect">Часть 2</div> </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wedding">
+        <img src="photo_ram.jpg" alt="Рамиль и Амина">
+        <div class="wedding-content">
+          <h2>Рамиль и Амина - 23 августа 2018г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/3f22da5072192ed7b8cd0b90b68d0ff6/?p=fmtNFN3bkbTBPr4nMMLEoQ"> <div class="part zoom-effect"> Запустить</div> </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wedding">
+        <img src="photo_nai.jpg" alt="Рашид и Наима">
+        <div class="wedding-content">
+          <h2>Рашид и Наима - 24 августа 2017г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/3d9e2bf39d845623a93bd00e9959a138/?p=oIrJ1Px3SJlgiof0eRfnMg"> <div class="part zoom-effect"> Часть 1 </div> </a>
+            <a href = "https://rutube.ru/video/private/ef93bbf7e8b87d3dc2cfbb8636e4e2f6/?p=PsqWkYmssmFWB7xd-XKKPQ"> <div class="part zoom-effect"> Часть 2 </div> </a>
+            <a href = "https://rutube.ru/video/private/9b5656d222183e3bfdb4cc6ab4f8fc39/?p=lTp9ymn7OZngTprR7Jc8bQ"> <div class="part zoom-effect"> Часть 3 </div> </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wedding">
+        <img src="photo_nili.jpg" alt="Заур и Нилима">
+        <div class="wedding-content">
+          <h2>Заур и Нилима - 8 августа 2010г.</h2>
+          <div class="parts">
+            <a href = "https://rutube.ru/video/private/0708d04b2f61167e9093a731aa8ca070/?p=JfKbPODFBMcM1G4Vco6gOQ"> <div class="part zoom-effect"> Часть 1 </div> </a>
+            <a href = "https://rutube.ru/video/private/4d26375435468b83a7aee7bdd9f55d6a/?p=zGt98JckPyCBndD3e8qEbw"> <div class="part zoom-effect"> Часть 2 </div> </a>
+            <a href = "https://rutube.ru/video/private/9b1568655ac739a588fb87676982ce3e/?p=HpuP3nz5p6ZnBkG96PtGHw"> <div class="part zoom-effect"> Часть 3 </div> </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="footer-container">
+      Все свадьбы выгружены на RUTUBE. Доступ ограничен и доступен только по ссылке.
+      © sefer
+    </footer>
   </div>
-</section> 
 
-<section class="wedding">
-  <img src="photo_mai.jpg" alt="Маина">
-  <div class="wedding-content">
-    <h2> Батыр и Маина - 25 августа 2025г. Свадьба невесты.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/2b5d4bd1dbc9c17217baf0b43713ae1e/?p=6qTa9eWW8NKznlZiUDYpmQ"> <div class="part zoom-effect" > Часть 1 </div> </a>
-      <a href = "https://rutube.ru/video/private/d681891b4878dc8b620113934f5671e8/?p=iH0Gn75xk6FTIRGafeg2xQ"> <div class="part zoom-effect"> Часть 2 </div> </a>     
-    </div>
-  </div>
-</section> 
-
-<section class="wedding">
-  <img src="photo_bislan.png" alt="Батыр">
-  <div class="wedding-content">
-    <h2> Бислан и Расмина - 15 августа 2025г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/82edad01331b452610bde174bc6f921d/"> <div class="part zoom-effect" > Часть 1 </div> </a>
-      <a href = "https://rutube.ru/video/b4167e6bb7642f8c40bae754c6990b7a/"> <div class="part zoom-effect"> Часть 2 </div> </a>     
-    </div>
-  </div>
-</section> 
-
-<section class="wedding">
-  <img src="photo_mar.png" alt="Марсель">
-  <div class="wedding-content">
-    <h2> Марсель и Рейхан - 14 августа 2025г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/02f0c72c2facdb863dce7762d1617377/?p=CwLSopUyIzEE-RugZz0scA"> <div class="part zoom-effect" > Часть 1 </div> </a>
-      <a href = "https://rutube.ru/video/private/98e75c63d82851bb1f9b1d8f7dbfa0fe/?p=k7p88WlrY4LY-2T0FwPNHg"> <div class="part zoom-effect"> Часть 2 </div> </a>     
-    </div>
-  </div>
-</section> 
-
-<section class="wedding">
-  <img src="photo_kaz.png" alt="Казмир">
-  <div class="wedding-content">
-    <h2> Казмир и Карина - 22 июля 2025г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/11705f94d96df8e9da96da46e65a3b5d/?p=bJc5oyBBMtlh-Bk9t-mJ8w"> <div class="part zoom-effect" > Часть 1 </div> </a>
-      <a href = "https://rutube.ru/video/private/0ee913310b748ba8213348fd5ff871fc/?p=pjg29iQG1POLFIOgilZbYA"> <div class="part zoom-effect"> Часть 2 </div> </a>
-      <a href = "https://rutube.ru/video/private/229091fb57730abf5bd2c20c799e8cd0/?p=bYgr2_9_iPmZULMlf_Ovsw"> <div class="part zoom-effect"> Часть 3  </div> </a>      
-    </div>
-  </div>
-</section> 
-
-<section class="wedding">
-  <img src="photo_zai.png" alt="Заира">
-  <div class="wedding-content">
-    <h2> Асланбек и Заира -  15 декабря 2024г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/8e51d2921599d52d28d5faafc94f9871/?p=dWYx0ztCMW093vO0BH2Rnw"> <div class="part zoom-effect" > Часть 1 </div> </a>
-      <a href = "https://rutube.ru/video/private/48b4768c7f8f347d2af0d3f45b1cfd94/?p=bi0cP7zU90GZkXc1Y3EAYw"> <div class="part zoom-effect"> Часть 2 </div> </a>
-    </div>
-  </div>
-</section> 
-
-<section class="wedding">
-  <img src="photo_zam.jpg" alt="Замир и Сабина">
-  <div class="wedding-content">
-    <h2>Замир и Сабина -  30 октября 2024г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/929f613fd4a6ffa13ec0bd55f305459a/?p=GXF5qA8h3xYqgoG8xrd1Ug"> <div class="part zoom-effect" > Часть 1 </div> </a>
-      <a href = "https://rutube.ru/video/private/70496a33eb41ee8997891b03b07964ca/?p=7rvhbCg8ngx8WaxInmjxjQ"> <div class="part zoom-effect"> Часть 2 </div> </a>
-      <a href = "https://rutube.ru/video/private/e24fda4f243126b988443ead3fc71c51/?p=Cder2HGthhmqsJ7ogVR5xQ"> <div class="part zoom-effect"> Часть 3 </div> </a>
-
-    </div>
-  </div>
-</section>
-
-
-<section class="wedding">
-  <img src="photo_ira.jpg" alt="Волкхан и Ирада">
-  <div class="wedding-content">
-    <h2>Волкхан и Ирада -  23 февраля 2024г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/e836fbdde40caac12a5932c47a038e80/?p=4299H4ushM9qVTELnmDYKw"> <div class="part zoom-effect" >Часть 1</div> </a>
-      <a href = "https://rutube.ru/video/private/c802d494713fd351ddd64f55f91d86ba/?p=YiN4G-bZW5PsZrQKGwD_PA"> <div class="part zoom-effect">Часть 2</div> </a>
-      <a href = "https://rutube.ru/video/private/933607348c2262be7014215f104bfc42/?p=UR8nXtGot1KiwLujRVP8Dw"> <div class="part zoom-effect">Часть 3</div> </a>
-    </div>
-  </div>
-</section>
-
-<section class="wedding">
-  <img src="photo_anz.jpg" alt="Анзор и Тоина">
-  <div class="wedding-content">
-    <h2>Анзор и Тоина - 14 октября 2021г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/dde636985db291f99f98ee406f680608/?p=pxkpHn502idFwg39IcaL3Q"> <div class="part zoom-effect">Часть 1</div> </a>
-      <a href = "https://rutube.ru/video/private/eaecbad233a400b7c36e8c65544ebe16/?p=_7zybyuCj-qOLmPqjZNxVg"> <div class="part zoom-effect">Часть 2</div> </a>
-    </div>
-  </div>
-</section>
-
-<section class="wedding">
-  <img src="photo_kema.jpg" alt="Кемран и Амина">
-  <div class="wedding-content">
-    <h2>Кемран и Амина - 21 июля 2021г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/b3ceaca3a05198886c0dd9d7eb65686f/?p=F5nvK6WvNUBWGGlXprVrMg"> <div class="part zoom-effect">Часть 1</div> </a>
-      <a href = "https://rutube.ru/video/private/9117dba18f14175c71e3c5b7ae1e2e61/?p=hGpi-JPnxThsR6qEKFaIrg"> <div class="part zoom-effect">Часть 2</div> </a>
-      <a href = "https://rutube.ru/video/private/5fcf79fdafb257dba9393b7c4538f2c8/?p=zZzq2j5JIfaigdALzHjmpw"> <div class="part zoom-effect">Часть 3</div> </a>
-
-    </div>
-  </div>
-</section>
-
-<section class="wedding">
-  <img src="photo_rav.jpg" alt="Равиль и Эвелина">
-  <div class="wedding-content">
-    <h2>Равиль и Эвелина - 21 июля 2020г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/9feb1fe032a98513bf87c135e5bd5ed7/?p=-CeVJ6zRJlQNJDNeUtKPIQ"> <div class="part zoom-effect">Часть 1</div> </a>
-      <a href = "https://rutube.ru/video/private/acec46bfaa709cee261c96369e7c463b/?p=E6bWNR-SCYXWoXL-QHxLCA"> <div class="part zoom-effect">Часть 2</div> </a>
-    </div>
-  </div>
-</section>
-
-<section class="wedding">
-  <img src="photo_ram.jpg" alt="Рамиль и Амина">
-  <div class="wedding-content">
-    <h2>Рамиль и Амина - 23 августа 2018г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/3f22da5072192ed7b8cd0b90b68d0ff6/?p=fmtNFN3bkbTBPr4nMMLEoQ"> <div class="part zoom-effect"> Запустить</div> </a>
-    </div>
-  </div>
-</section>
-
-<section class="wedding">
-  <img src="photo_nai.jpg" alt="Рашид и Наима">
-  <div class="wedding-content">
-    <h2>Рашид и Наима - 24 августа 2017г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/3d9e2bf39d845623a93bd00e9959a138/?p=oIrJ1Px3SJlgiof0eRfnMg"> <div class="part zoom-effect"> Часть 1 </div> </a>
-      <a href = "https://rutube.ru/video/private/ef93bbf7e8b87d3dc2cfbb8636e4e2f6/?p=PsqWkYmssmFWB7xd-XKKPQ"> <div class="part zoom-effect"> Часть 2 </div> </a>
-      <a href = "https://rutube.ru/video/private/9b5656d222183e3bfdb4cc6ab4f8fc39/?p=lTp9ymn7OZngTprR7Jc8bQ"> <div class="part zoom-effect"> Часть 3 </div> </a>
-
-    </div>
-  </div>
-</section>
-
-<section class="wedding">
-  <img src="photo_nili.jpg" alt="Заур и Нилима">
-  <div class="wedding-content">
-    <h2>Заур и Нилима - 8 августа 2010г.</h2>
-    <div class="parts">
-      <a href = "https://rutube.ru/video/private/0708d04b2f61167e9093a731aa8ca070/?p=JfKbPODFBMcM1G4Vco6gOQ"> <div class="part zoom-effect"> Часть 1 </div> </a>
-      <a href = "https://rutube.ru/video/private/4d26375435468b83a7aee7bdd9f55d6a/?p=zGt98JckPyCBndD3e8qEbw"> <div class="part zoom-effect"> Часть 2 </div> </a>
-      <a href = "https://rutube.ru/video/private/9b1568655ac739a588fb87676982ce3e/?p=HpuP3nz5p6ZnBkG96PtGHw"> <div class="part zoom-effect"> Часть 3 </div> </a>
-
-    </div>
-  </div>
-</section>
-
-</main>
-  
-  <footer class="footer-container">
-    Все свадьбы выгружены на RUTUBE. Доступ ограничен и доступен только по ссылке.
-    © sefer
-  </footer>
-</div>
   <script>
-  const input = document.getElementById('search');
-  const resetBtn = document.getElementById('reset-button');
-
-  input.addEventListener('input', function () {
-    searchWeddings();
-    resetBtn.style.display = this.value ? 'block' : 'none';
-  });
-
-  function searchWeddings() {
-    const filter = input.value.toLowerCase();
-    const weddings = document.getElementsByClassName('wedding');
-
-    for (let i = 0; i < weddings.length; i++) {
-      const blockText = weddings[i].textContent.toLowerCase();
-      weddings[i].style.display = blockText.includes(filter) ? "" : "none";
+    // Функция для получения точного цвета фона из CSS переменной
+    function getExactBackgroundColor() {
+      // Получаем вычисленный цвет из CSS переменной --bg-primary
+      const root = document.documentElement;
+      const computedStyle = getComputedStyle(root);
+      const bgColor = computedStyle.getPropertyValue('--bg-primary').trim();
+      
+      // Если цвет в формате HEX, возвращаем его
+      if (bgColor.startsWith('#')) {
+        return bgColor;
+      }
+      
+      // Если цвет в формате rgb/rgba, конвертируем в HEX
+      if (bgColor.startsWith('rgb')) {
+        return rgbToHex(bgColor);
+      }
+      
+      // Если это CSS переменная или другое значение, возвращаем дефолтный
+      return root.style.getPropertyValue('--bg-primary') || '#fdfaf6';
     }
-  }
 
-  function resetSearch() {
-    input.value = "";
-    searchWeddings();
-    resetBtn.style.display = "none";
-  }
+    // Конвертация RGB/RGBA в HEX
+    function rgbToHex(rgb) {
+      const rgbValues = rgb.match(/\d+/g);
+      if (!rgbValues) return '#fdfaf6';
+      
+      const r = parseInt(rgbValues[0]);
+      const g = parseInt(rgbValues[1]);
+      const b = parseInt(rgbValues[2]);
+      
+      return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+    }
+
+    // Обновление мета-тегов статус-бара
+    function updateStatusBarColor() {
+      const color = getExactBackgroundColor();
+      
+      // Обновляем theme-color для Android и современных браузеров
+      const themeColorMeta = document.getElementById('theme-color-meta');
+      if (themeColorMeta) {
+        themeColorMeta.setAttribute('content', color);
+      }
+      
+      // Обновляем мета-теги для Microsoft
+      const msNavButton = document.getElementById('ms-navbutton');
+      const msTileColor = document.getElementById('ms-tilecolor');
+      
+      if (msNavButton) msNavButton.setAttribute('content', color);
+      if (msTileColor) msTileColor.setAttribute('content', color);
+      
+      console.log('Статус-бар обновлен на цвет:', color);
+    }
+
+    // Определение системной темы
+    function getSystemTheme() {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+      return 'light';
+    }
+
+    // Установка темы
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      
+      // Даем время на применение CSS
+      setTimeout(() => {
+        updateStatusBarColor();
+      }, 50);
+    }
+
+    // Инициализация темы при загрузке страницы
+    function initTheme() {
+      const theme = getSystemTheme();
+      setTheme(theme);
+      
+      // Дополнительная проверка после полной загрузки
+      setTimeout(updateStatusBarColor, 100);
+    }
+
+    // Отслеживание изменений системной темы
+    if (window.matchMedia) {
+      const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      colorSchemeQuery.addEventListener('change', function(e) {
+        const theme = e.matches ? 'dark' : 'light';
+        setTheme(theme);
+      });
+    }
+
+    // Поиск свадеб
+    const input = document.getElementById('search');
+    const resetBtn = document.getElementById('reset-button');
+
+    input.addEventListener('input', function () {
+      searchWeddings();
+      resetBtn.style.display = this.value ? 'block' : 'none';
+    });
+
+    function searchWeddings() {
+      const filter = input.value.toLowerCase();
+      const weddings = document.getElementsByClassName('wedding');
+
+      for (let i = 0; i < weddings.length; i++) {
+        const blockText = weddings[i].textContent.toLowerCase();
+        weddings[i].style.display = blockText.includes(filter) ? "" : "none";
+      }
+    }
+
+    function resetSearch() {
+      input.value = "";
+      searchWeddings();
+      resetBtn.style.display = "none";
+    }
+
+    // Инициализация при загрузке
+    document.addEventListener('DOMContentLoaded', function() {
+      initTheme();
+      
+      // Обновляем цвет статус-бара при изменении размера окна (на всякий случай)
+      window.addEventListener('resize', updateStatusBarColor);
+      
+      // Обновляем цвет статус-бара при взаимодействии с элементами
+      document.addEventListener('click', function() {
+        setTimeout(updateStatusBarColor, 10);
+      });
+    });
+
+    // Также обновляем цвет статус-бара при видимости страницы
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden) {
+        setTimeout(updateStatusBarColor, 100);
+      }
+    });
   </script>
-
-<script>
-// Определение системной темы
-function getSystemTheme() {
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    return 'dark';
-  }
-  return 'light';
-}
-
-// Установка темы
-function setTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-}
-
-// Инициализация темы при загрузке страницы
-function initTheme() {
-  setTheme(getSystemTheme());
-}
-
-// Отслеживание изменений системной темы
-if (window.matchMedia) {
-  const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  colorSchemeQuery.addEventListener('change', function(e) {
-    setTheme(e.matches ? 'dark' : 'light');
-  });
-}
-
-// Инициализация при загрузке
-document.addEventListener('DOMContentLoaded', initTheme);
-</script>
 </body>
 </html>
