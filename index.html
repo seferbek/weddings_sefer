@@ -20,7 +20,6 @@
   <link rel="preload" href="photo_bislan.png" as="image">
   
   <title>Свадьбы</title>
-  
   <link rel="stylesheet" href="style.css">
   
   <style>
@@ -37,10 +36,9 @@
   
   <div class="page-wrapper">
     <header>
-      Weddings
+      Weddings 💍
       <div class="search-container">
         <input type="text" id="search" placeholder="Поиск свадьбы" oninput="searchWeddings()">
-        <button id="reset-button" onclick="resetSearch()">✕</button>
       </div>
     </header>
     
@@ -313,12 +311,6 @@
 
     // Поиск свадеб
     const input = document.getElementById('search');
-    const resetBtn = document.getElementById('reset-button');
-
-    input.addEventListener('input', function () {
-      searchWeddings();
-      resetBtn.style.display = this.value ? 'block' : 'none';
-    });
 
     function searchWeddings() {
       const filter = input.value.toLowerCase();
@@ -328,12 +320,6 @@
         const blockText = weddings[i].textContent.toLowerCase();
         weddings[i].style.display = blockText.includes(filter) ? "" : "none";
       }
-    }
-
-    function resetSearch() {
-      input.value = "";
-      searchWeddings();
-      resetBtn.style.display = "none";
     }
 
     // Инициализация при загрузке
