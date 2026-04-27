@@ -231,7 +231,7 @@ input#search:focus {
   margin-top: 0.55rem;
   color: var(--text-secondary);
   font-size: 0.82em;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.35;
   order: 3;
 }
@@ -342,7 +342,7 @@ a:visited {
 
   .wedding {
     display: grid;
-    grid-template-columns: minmax(320px, 46%) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: stretch;
     max-width: 100%;
     min-height: 330px;
@@ -391,7 +391,7 @@ a:visited {
   .wedding-date {
     margin-top: 18px;
     font-size: clamp(1.1rem, 1.3vw, 1.48rem);
-    font-weight: 500;
+    font-weight: 400;
   }
 
   .wedding-kind {
@@ -474,16 +474,16 @@ a:visited {
   }
 
   .wedding h2 {
-    font-size: 150%;
+    font-size: 178%;
   }
 
   .wedding-date {
-    margin-top: 0.65rem;
-    font-size: 0.9em;
+    margin-top: 0.48rem;
+    font-size: 0.76em;
   }
 
   .wedding-kind {
-    margin-top: 0.28rem;
+    margin-top: 0.18rem;
     font-size: 0.74em;
   }
 }
@@ -538,16 +538,16 @@ a:visited {
     color: var(--text-primary);
     max-width: 92%;
     margin: 0.5% auto;
-    font-size: 155%;
+    font-size: 188%;
   }
 
   .wedding-date {
-    margin-top: 0.7rem;
-    font-size: 0.94em;
+    margin-top: 0.52rem;
+    font-size: 0.78em;
   }
 
   .wedding-kind {
-    margin-top: 0.3rem;
+    margin-top: 0.2rem;
     font-size: 0.78em;
   }
   
