@@ -20,6 +20,9 @@
   <link rel="preload" href="photo_bislan.png" as="image">
   
   <title>Свадьбы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   
   <style>
@@ -35,12 +38,21 @@
   <div class="color-extractor" id="bg-primary-color"></div>
   
   <div class="page-wrapper">
-    <header>
-      Weddings 💍
-      <div class="search-container">
-        <input type="text" id="search" placeholder="Поиск свадьбы" oninput="searchWeddings()">
-      </div>
-    </header>
+    <div class="topbar">
+      <header>
+        <span class="header-title">Weddings 💍</span>
+        <div class="search-container">
+          <input type="text" id="search" placeholder="Поиск свадьбы" oninput="searchWeddings()">
+          <button class="search-clear" type="button" aria-label="Очистить поиск" onclick="clearSearch()" hidden>×</button>
+        </div>
+      </header>
+
+      <section class="rutube-block" aria-label="RUTUBE канал">
+        <a class="rutube-channel" href="https://rutube.ru/channel/33794826/" target="_blank" rel="noopener noreferrer" aria-label="Открыть канал на RUTUBE">
+          <img class="rutube-logo" src="logo-rutube.png" alt="RUTUBE">
+        </a>
+      </section>
+    </div>
     
     <main>
       <section class="wedding">
@@ -278,8 +290,18 @@
     </main>
     
     <footer class="footer-container">
-      Все свадьбы выгружены на RUTUBE. Доступ ограничен и доступен только по ссылке.
-      © sefer
+      <div class="footer-text">
+        Все свадьбы выгружены на RUTUBE. Доступ ограничен и доступен только по ссылке. © sefer
+      </div>
+      <div class="footer-contact">
+        <span>Контакт для связи:</span>
+        <a class="telegram-link" href="https://t.me/seferbekov" target="_blank" rel="noopener noreferrer" aria-label="Связаться в Telegram">
+          <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21.7 4.2 18.5 19.3c-.2 1.1-.9 1.3-1.8.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L5.9 12.9 1 11.4c-1.1-.3-1.1-1.1.2-1.6L20.3 2.5c.9-.3 1.7.2 1.4 1.7Z"/>
+          </svg>
+          <span>Telegram</span>
+        </a>
+      </div>
     </footer>
   </div>
 
@@ -375,6 +397,12 @@
 
     // Поиск свадеб
     const input = document.getElementById('search');
+    const searchClear = document.querySelector('.search-clear');
+
+    function updateSearchClear() {
+      if (!searchClear) return;
+      searchClear.hidden = input.value.length === 0;
+    }
 
     function searchWeddings() {
       const filter = input.value.toLowerCase();
@@ -384,11 +412,20 @@
         const blockText = weddings[i].textContent.toLowerCase();
         weddings[i].style.display = blockText.includes(filter) ? "" : "none";
       }
+
+      updateSearchClear();
+    }
+
+    function clearSearch() {
+      input.value = "";
+      searchWeddings();
+      input.focus();
     }
 
     // Инициализация при загрузке
     document.addEventListener('DOMContentLoaded', function() {
       initTheme();
+      updateSearchClear();
       
       // Обновляем цвет статус-бара при изменении размера окна (на всякий случай)
       window.addEventListener('resize', updateStatusBarColor);
