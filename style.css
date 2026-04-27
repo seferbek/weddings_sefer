@@ -206,6 +206,51 @@ input#search:focus {
   margin: 2% auto;
   font-size: 140%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.wedding-title,
+.wedding-date,
+.wedding-kind {
+  display: block;
+}
+
+.wedding-title {
+  color: #111111;
+  font-weight: 800;
+  line-height: 1.08;
+  order: 1;
+}
+
+[data-theme="dark"] .wedding-title {
+  color: #f4f4f4;
+}
+
+.wedding-date {
+  margin-top: 0.55rem;
+  color: var(--text-secondary);
+  font-size: 0.82em;
+  font-weight: 500;
+  line-height: 1.35;
+  order: 3;
+}
+
+.wedding-kind {
+  margin-top: 0.28rem;
+  color: var(--text-secondary);
+  font-size: 0.58em;
+  font-weight: 400;
+  line-height: 1.35;
+  order: 2;
+}
+
+.wedding-kind::before {
+  content: "(";
+}
+
+.wedding-kind::after {
+  content: ")";
 }
 
 .search-container {
@@ -274,6 +319,106 @@ a:visited {
   transform: scale(1.02);
 }
 
+@media (min-width: 769px) {
+  main {
+    width: min(1180px, 88vw);
+    margin: 0 auto;
+    padding: 18px 0 34px;
+  }
+
+  header {
+    width: min(1180px, 88vw);
+    gap: 24px;
+    padding: 1.25rem 1.75rem;
+  }
+
+  .search-container {
+    flex: 0 1 360px;
+  }
+
+  .footer-container {
+    width: min(1180px, 88vw);
+  }
+
+  .wedding {
+    display: grid;
+    grid-template-columns: minmax(320px, 46%) minmax(0, 1fr);
+    align-items: stretch;
+    max-width: 100%;
+    min-height: 330px;
+    margin: 30px auto;
+    border-radius: 52px;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.64)),
+      var(--bg-secondary);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.11);
+  }
+
+  [data-theme="dark"] .wedding {
+    background:
+      linear-gradient(135deg, rgba(28, 28, 28, 0.96), rgba(18, 18, 18, 0.82)),
+      var(--bg-secondary);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+  }
+
+  .wedding img {
+    width: 100%;
+    height: 100%;
+    min-height: 330px;
+    object-fit: cover;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 0;
+    border-radius: 52px 0 0 52px;
+  }
+
+  .wedding-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 34px;
+    padding: clamp(28px, 4vw, 58px);
+  }
+
+  .wedding h2 {
+    max-width: 100%;
+    margin: 0;
+    font-size: clamp(2rem, 3vw, 3.55rem);
+    line-height: 1.06;
+    letter-spacing: 0;
+    text-align: left;
+  }
+
+  .wedding-date {
+    margin-top: 18px;
+    font-size: clamp(1.1rem, 1.3vw, 1.48rem);
+    font-weight: 500;
+  }
+
+  .wedding-kind {
+    margin-top: 8px;
+    font-size: clamp(0.92rem, 0.98vw, 1.08rem);
+    font-weight: 400;
+  }
+
+  .parts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: auto;
+  }
+
+  .parts a {
+    flex: 1 1 150px;
+  }
+
+  .part {
+    width: 100%;
+    margin: 0;
+    padding: 13px 18px;
+    font-size: 1.08rem;
+  }
+}
+
 /* Адаптив для мобильных устройств */
 @media (max-width: 768px) {
   header {
@@ -327,6 +472,20 @@ a:visited {
     padding: 1.5rem 2rem;
     border-radius: 100px;
   }
+
+  .wedding h2 {
+    font-size: 150%;
+  }
+
+  .wedding-date {
+    margin-top: 0.65rem;
+    font-size: 0.9em;
+  }
+
+  .wedding-kind {
+    margin-top: 0.28rem;
+    font-size: 0.74em;
+  }
 }
 
 @media (max-width: 600px) {
@@ -379,7 +538,17 @@ a:visited {
     color: var(--text-primary);
     max-width: 92%;
     margin: 0.5% auto;
-    font-size: 140%;
+    font-size: 155%;
+  }
+
+  .wedding-date {
+    margin-top: 0.7rem;
+    font-size: 0.94em;
+  }
+
+  .wedding-kind {
+    margin-top: 0.3rem;
+    font-size: 0.78em;
   }
   
   .wedding-content {
