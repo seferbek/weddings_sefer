@@ -1,15 +1,16 @@
 /* Layout для прижатия футера */
 :root {
   /* Светлая тема (по умолчанию) */
-  --bg-primary: #fdfaf6;
+  --corner-radius: 42px;
+  --bg-primary: #f7f7f5;
   --bg-secondary: #ffffff;
   --bg-header: #000000;
   --bg-footer: #000000;
-  --text-primary: #333333;
-  --text-secondary: #666666;
-  --text-light: #959595;
+  --text-primary: #222222;
+  --text-secondary: #686868;
+  --text-light: #8a8a8a;
   --text-inverse: #ffffff;
-  --border-color: #00000025;
+  --border-color: #00000020;
   --border-width: 0.65px;
   --input-border-width: 0.75px;
   --divider-border-width: 0.75px;
@@ -18,9 +19,9 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
   --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   --hover-bg: #000000;
-  --hover-text: #DCE5E2;
+  --hover-text: #ffffff;
   --input-bg: #ffffff;
-  --input-border: #cccccc;
+  --input-border: #d4d4d4;
   --glass-blur: blur(24px) saturate(125%);
   --glass-bg-strength: 80%;
   --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.16);
@@ -28,30 +29,29 @@
 }
 
 [data-theme="dark"] {
-  /* Темная тема - более мягкие границы */
-  --bg-primary: #101010;
-  --bg-secondary: #151515;
-  --bg-header: #151515;
-  --bg-footer: #151515;
-  --text-primary: #e0e0e0;
-  --text-secondary: #b0b0b0;
-  --text-light: #888888;
+  --bg-primary: #070707;
+  --bg-secondary: #111111;
+  --bg-header: #050505;
+  --bg-footer: #050505;
+  --text-primary: #e8e8e8;
+  --text-secondary: #b8b8b8;
+  --text-light: #929292;
   --text-inverse: #ffffff;
-  --border-color: #323232; /* Более мягкий цвет границы */
+  --border-color: #343434;
   --border-width: 0.5px;
   --input-border-width: 0.5px;
   --divider-border-width: 0.5px;
   --part-border-width: 0.5px;
   --mobile-part-border-width: 0.5px;
-  --shadow-color: rgba(0, 0, 0, 0.25);
-  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  --hover-bg: #2a2a2a; /* Более мягкий цвет при наведении */
+  --shadow-color: rgba(0, 0, 0, 0.42);
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.38);
+  --hover-bg: #292929;
   --hover-text: #ffffff;
-  --input-bg: #2a2a2a;
-  --input-border: #404040; /* Более мягкая граница для инпутов */
-  --glass-bg-strength: 72%;
-  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.07);
-  --glass-depth: 0 18px 48px rgba(0, 0, 0, 0.34);
+  --input-bg: #151515;
+  --input-border: #414141;
+  --glass-bg-strength: 78%;
+  --glass-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.09);
+  --glass-depth: 0 18px 48px rgba(0, 0, 0, 0.42);
 }
 
 html, body {
@@ -60,6 +60,16 @@ html, body {
   height: 100%;
   box-sizing: border-box;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: rgba(120, 120, 120, 0.28);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] ::selection {
+  background: rgba(180, 180, 180, 0.28);
+  color: #ffffff;
 }
 
 .page-wrapper {
@@ -73,6 +83,43 @@ main {
   flex: 1;
 }
 
+/*
+.sort-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: min(1320px, 92vw);
+  margin: 8px auto 0;
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sort-control select {
+  min-height: 40px;
+  padding: 0.42rem 2.1rem 0.42rem 0.9rem;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.016)),
+    color-mix(in srgb, var(--bg-secondary) var(--glass-bg-strength), transparent);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.86rem;
+  box-shadow: var(--glass-highlight), 0 10px 24px var(--shadow-color);
+  text-transform: none;
+  cursor: pointer;
+}
+
+.sort-control select:focus {
+  outline: none;
+  border-color: var(--text-light);
+}
+*/
+
 * {
   box-sizing: inherit;
 }
@@ -81,7 +128,6 @@ header,
 .footer-container,
 .wedding,
 .part,
-.rutube-block,
 input#search,
 .search-clear {
   -webkit-backdrop-filter: var(--glass-blur);
@@ -115,7 +161,7 @@ footer.container {
   margin-top: 0;
   width: 50%;
   padding: 0.95rem 1.4rem 0.78rem;
-  border-radius: 100px;
+  border-radius: 0;
   transition: all 0.3s ease;
 }
 
@@ -123,11 +169,17 @@ footer.container {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  line-height: 1.28;
+  color: var(--text-light);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  line-height: 1.45;
+  text-wrap: balance;
 }
 
 .footer-contact {
   display: inline-flex;
+  align-self: center;
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
@@ -139,13 +191,14 @@ footer.container {
 
 .telegram-link {
   display: inline-flex;
+  align-self: center;
   align-items: center;
   justify-content: center;
   gap: 8px;
   min-height: 34px;
   padding: 0.48rem 0.9rem;
   border: var(--border-width) solid rgba(255, 255, 255, 0.22);
-  border-radius: 100px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: var(--glass-highlight), 0 8px 22px rgba(0, 0, 0, 0.18);
   color: var(--text-inverse);
@@ -174,7 +227,7 @@ footer.container {
 }
 
 body {
-  font-family: 'Mulish', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg-primary);
   margin: 0;
   padding: 0;
@@ -208,10 +261,6 @@ body {
   margin: 0;
 }
 
-.topbar .rutube-block {
-  margin: 0;
-}
-
 header {
   background: var(--bg-header);
   color: var(--text-inverse);
@@ -231,7 +280,7 @@ header {
   position: relative;
   top: 0;
   z-index: 1000;
-  border-radius: 100px;
+  border-radius: 0;
   text-align: center;
 }
 
@@ -241,54 +290,6 @@ header {
   color: var(--text-inverse);
   line-height: 1;
   white-space: nowrap;
-}
-
-.rutube-channel {
-  display: block;
-  width: 150px;
-  padding: 2px;
-  border: var(--border-width) solid rgba(255, 255, 255, 0.22);
-  border-radius: 100px;
-  background: #0b0b0d;
-  overflow: hidden;
-  box-shadow: var(--glass-highlight), 0 8px 22px rgba(0, 0, 0, 0.2);
-  line-height: 0;
-  transition: all 0.2s ease;
-}
-
-.rutube-channel:visited {
-  color: var(--text-inverse);
-}
-
-.rutube-channel:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--glass-highlight), 0 10px 26px rgba(0, 0, 0, 0.24);
-}
-
-.rutube-mobile-link {
-  display: none;
-}
-
-.rutube-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin: 18px auto 0;
-  padding: 0.45rem;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: 100px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.018)),
-    color-mix(in srgb, var(--bg-secondary) var(--glass-bg-strength), transparent);
-  box-shadow: var(--glass-highlight), 0 10px 24px var(--shadow-color);
-}
-
-.rutube-logo {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 100px;
 }
 
 p {
@@ -313,7 +314,7 @@ p {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.018)),
     color-mix(in srgb, var(--bg-secondary) var(--glass-bg-strength), transparent);
-  border-radius: 50px;
+  border-radius: 0;
   box-shadow: var(--glass-highlight), var(--glass-depth), var(--card-shadow);
   overflow: hidden;
   font-size: 100%;
@@ -325,7 +326,7 @@ p {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 50px 50px 50px 50px;
+  border-radius: 0;
   border-bottom: var(--divider-border-width) solid var(--border-color);
 }
 
@@ -344,9 +345,9 @@ header::before {
 }
 
 input#search {
-  padding: 0.5rem 2.75rem 0.5rem 1rem;
+  padding: 0.5rem 2.75rem 0.5rem 42px;
   border: var(--input-border-width) solid var(--input-border);
-  border-radius: 100px;
+  border-radius: 0;
   font-size: 1rem;
   width: 100%;
   margin-top: 0%;
@@ -357,6 +358,11 @@ input#search {
   background: var(--input-bg);
   color: var(--text-primary);
   appearance: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input#search::placeholder {
+  color: transparent;
 }
 
 [data-theme="dark"] input#search {
@@ -406,7 +412,7 @@ input#search:focus {
 
 .wedding-title {
   color: #111111;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.08;
   order: 1;
 }
@@ -425,35 +431,122 @@ input#search:focus {
 }
 
 .wedding-kind {
+  align-self: center;
+  display: inline-flex;
+  width: fit-content;
   margin-top: 0.28rem;
+  padding: 0.28rem 0.62rem;
   color: var(--text-secondary);
-  font-size: 0.58em;
-  font-weight: 400;
+  background: color-mix(in srgb, var(--bg-primary) 72%, transparent);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
   line-height: 1.35;
   order: 2;
+  text-transform: uppercase;
 }
 
 .wedding-kind::before {
-  content: "(";
+  content: none;
 }
 
 .wedding-kind::after {
-  content: ")";
+  content: none;
+}
+
+.wedding-kind--groom {
+  color: #4f83a8;
+  background: rgba(135, 190, 224, 0.18);
+  border-color: rgba(79, 131, 168, 0.36);
+}
+
+.wedding-kind--bride {
+  color: #b56b86;
+  background: rgba(224, 145, 171, 0.18);
+  border-color: rgba(181, 107, 134, 0.36);
+}
+
+[data-theme="dark"] .wedding-kind--groom {
+  color: #9bcff1;
+  background: rgba(93, 163, 211, 0.18);
+  border-color: rgba(155, 207, 241, 0.34);
+}
+
+[data-theme="dark"] .wedding-kind--bride {
+  color: #f0a9c1;
+  background: rgba(214, 116, 151, 0.18);
+  border-color: rgba(240, 169, 193, 0.34);
 }
 
 .search-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 7px;
   line-height: 0;
+}
+
+.search-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: left 0.3s ease, transform 0.3s ease, opacity 0.2s ease;
+}
+
+.search-container:focus-within .search-overlay {
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.search-container:has(input:not(:placeholder-shown)) .search-overlay {
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.search-container:has(input:not(:placeholder-shown)) .search-placeholder {
+  opacity: 0;
+}
+
+.search-placeholder {
+  font-size: 0.92rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.search-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  color: var(--text-secondary);
+  display: block;
+}
+
+[data-theme="dark"] .search-icon {
+  color: #c4c4c4;
 }
 
 #search {
   padding: 6px 42px 6px 10px;
   font-size: 16px;
+  font-weight: 400;
+  letter-spacing: normal;
   line-height: 1.2;
   border: var(--input-border-width) solid var(--input-border);
-  border-radius: 100px;
+  border-radius: 0;
   background-color: var(--input-bg);
   color: var(--text-primary);
 }
@@ -462,14 +555,15 @@ input#search:focus {
   position: absolute;
   top: 50%;
   right: 8px;
+  bottom: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   padding: 0;
-  border: var(--part-border-width) solid var(--border-color);
-  border-radius: 50%;
+  border: var(--part-border-width) solid #989898;
+  border-radius: 0;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015)),
     color-mix(in srgb, var(--input-bg) var(--glass-bg-strength), transparent);
@@ -488,11 +582,20 @@ input#search:focus {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 10px;
-  height: 1.5px;
+  width: 9px;
+  height: 1px;
   border-radius: 999px;
-  background: var(--text-secondary);
   transition: background-color 0.2s ease;
+}
+
+.search-clear::before,
+.search-clear::after {
+  background: #666666;
+}
+
+[data-theme="dark"] .search-clear::before,
+[data-theme="dark"] .search-clear::after {
+  background: #c4c4c4;
 }
 
 .search-clear::before {
@@ -541,7 +644,7 @@ a:visited {
     color-mix(in srgb, var(--bg-secondary) var(--glass-bg-strength), transparent);
   width: 91%;
   border: var(--border-width) solid var(--border-color);
-  border-radius: 100px;
+  border-radius: 0;
   transition: all 0.3s ease;
   text-align: center;
   font-size: 1.25em;
@@ -552,8 +655,8 @@ a:visited {
 .part:hover {
   background: var(--hover-bg);
   color: var(--hover-text);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px var(--shadow-color);
+  transform: translateX(6px);
+  box-shadow: var(--glass-highlight), 0 14px 30px var(--shadow-color);
 }
 
 .part:hover a {
@@ -574,18 +677,25 @@ a:visited {
 
 @media (min-width: 769px) {
   .topbar {
-    width: min(1180px, 88vw);
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 220px;
-    align-items: stretch;
-    gap: 16px;
+    width: min(1320px, 92vw);
+    display: block;
   }
 
   main {
-    width: min(1180px, 88vw);
+    width: min(1320px, 92vw);
     margin: 0 auto;
-    padding: 18px 0 34px;
+    padding: 4px 0 34px;
   }
+
+  main .wedding:first-child {
+    margin-top: 30px;
+  }
+
+  /*
+  .sort-control {
+    padding-left: calc(50% + clamp(80px, 8vw, 120px));
+  }
+  */
 
   header {
     display: flex;
@@ -598,24 +708,25 @@ a:visited {
     flex: 0 0 auto;
   }
 
+  .header-telegram {
+    margin-left: auto;
+  }
+
   .search-container {
-    flex: 0 1 300px;
-  }
-
-  .rutube-block {
-    margin: 0;
-    align-self: stretch;
-    width: 220px;
-    padding: 0.55rem;
-  }
-
-  .rutube-channel {
-    width: auto;
+    position: absolute;
+    left: 50%;
+    flex: 0 1 320px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    transform: translateX(-50%);
   }
 
   input#search {
     min-height: 38px;
-    padding: 0.42rem 2.4rem 0.42rem 0.9rem;
+    min-width: 260px;
+    padding: 0.42rem 2.4rem 0.42rem 42px;
     font-size: 0.92rem;
   }
 
@@ -623,10 +734,17 @@ a:visited {
     width: 24px;
     height: 24px;
     right: 7px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
+  .search-clear:hover {
+    transform: translateY(-50%) scale(1.04);
   }
 
   .footer-container {
-    width: min(1180px, 88vw);
+    width: min(1320px, 92vw);
   }
 
   .wedding {
@@ -636,7 +754,7 @@ a:visited {
     max-width: 100%;
     min-height: 330px;
     margin: 30px auto;
-    border-radius: 52px;
+    border-radius: 0;
     background:
       linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)),
       color-mix(in srgb, var(--bg-secondary) var(--glass-bg-strength), transparent);
@@ -657,7 +775,7 @@ a:visited {
     object-fit: cover;
     border-right: var(--divider-border-width) solid var(--border-color);
     border-bottom: 0;
-    border-radius: 52px 0 0 52px;
+    border-radius: 0;
   }
 
   .wedding-content {
@@ -671,7 +789,8 @@ a:visited {
   .wedding h2 {
     max-width: 100%;
     margin: 0;
-    font-size: clamp(2rem, 3vw, 3.55rem);
+    font-size: clamp(2.1rem, 3.5vw, 4rem);
+    letter-spacing: -0.03em;
     line-height: 1.06;
     letter-spacing: 0;
     text-align: left;
@@ -684,9 +803,9 @@ a:visited {
   }
 
   .wedding-kind {
+    align-self: flex-start;
     margin-top: 8px;
-    font-size: clamp(0.92rem, 0.98vw, 1.08rem);
-    font-weight: 400;
+    font-size: 0.72rem;
   }
 
   .parts {
@@ -710,7 +829,11 @@ a:visited {
     min-height: 52px;
     margin: 0;
     padding: 13px 18px;
-    font-size: 1.08rem;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
 
@@ -729,7 +852,7 @@ a:visited {
     margin: 0;
     padding: 1.35rem 1.35rem;
     gap: 0;
-    border-radius: 40px;
+    border-radius: 0;
   }
 
   .header-title {
@@ -737,14 +860,8 @@ a:visited {
     margin-bottom: 1.35rem;
   }
 
-  .rutube-block {
-    margin: 0 auto;
-    width: fit-content;
-    padding: 0.55rem;
-  }
-
-  .rutube-channel {
-    width: 136px;
+  .header-telegram {
+    display: none;
   }
 
   .search-container {
@@ -752,10 +869,18 @@ a:visited {
     width: 100%;
   }
 
+  /*
+  .sort-control {
+    width: 92%;
+    margin-top: 8px;
+    padding-left: 10%;
+  }
+  */
+
   input#search {
-    padding: 0.5rem 2.75rem 0.5rem 1rem;
+    padding: 0.5rem 2.75rem 0.5rem 42px;
     border: var(--input-border-width) solid var(--input-border);
-    border-radius: 100px;
+    border-radius: 0;
     font-size: 1rem;
     margin: 0;
     max-width: 100%;
@@ -765,16 +890,12 @@ a:visited {
   }
   
   .search-container {
-    width: min(360px, 100%);
+    width: 94%;
     max-width: 100%;
   }
 
-  .rutube-block {
-    display: flex;
-  }
-
   main .wedding:first-child {
-    margin-top: 14px;
+    margin-top: 20px;
   }
 
   header::before {
@@ -802,14 +923,20 @@ a:visited {
     margin-bottom: 15px;
     width: 92%;
     padding: 0.95rem 1.25rem 0.82rem;
-    border-radius: 40px;
+    border-radius: 0;
   }
 
   .footer-contact {
     justify-content: center;
     gap: 8px;
+    flex-wrap: wrap;
     font-size: 0.76rem;
     white-space: normal;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 
   .telegram-link {
@@ -827,14 +954,19 @@ a:visited {
     font-size: 178%;
   }
 
+  .wedding-title {
+    font-size: 1.18em;
+  }
+
   .wedding-date {
     margin-top: 0.48rem;
     font-size: 0.76em;
   }
 
   .wedding-kind {
-    margin-top: 0.18rem;
-    font-size: 0.74em;
+    margin-top: 0.52rem;
+    padding: 0.34rem 0.72rem;
+    font-size: 0.68rem;
   }
 }
 
@@ -842,20 +974,20 @@ a:visited {
   header {
     background: var(--bg-header);
     color: var(--text-inverse);
-    padding: 1.1rem 1.35rem;
+    padding: 1.1rem 1.35rem 1.35rem;
     gap: 0;
     text-align: center;
     font-size: 125%;
     box-shadow: var(--glass-highlight), var(--glass-depth), 0 2px 10px var(--shadow-color);
     width: 100%;
     margin: 0;
-    border-radius: 40px;
+    border-radius: 0;
   }
   
   input#search {
-    padding: 0.5rem 2.75rem 0.5rem 1rem;
+    padding: 0.5rem 2.75rem 0.5rem 42px;
     border: var(--input-border-width) solid var(--input-border);
-    border-radius: 100px;
+    border-radius: 0;
     font-size: 1rem;
     margin: 0;
     width: 100%;
@@ -869,7 +1001,7 @@ a:visited {
   }
 
   .search-container {
-    width: min(300px, 100%);
+    width: 94%;
   }
   
   .wedding {
@@ -878,7 +1010,7 @@ a:visited {
     background:
       linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.018)),
       color-mix(in srgb, var(--bg-secondary) var(--glass-bg-strength), transparent);
-    border-radius: 40px;
+    border-radius: 0;
     box-shadow: var(--glass-highlight), var(--glass-depth), var(--card-shadow);
     overflow: hidden;
     font-size: 80%;
@@ -886,14 +1018,14 @@ a:visited {
   }
 
   main .wedding:first-child {
-    margin-top: 14px;
+    margin-top: 20px;
   }
 
   .wedding img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 40px 40px 40px 40px;
+  border-radius: 0;
   border-bottom: var(--divider-border-width) solid var(--border-color);
 }
   
@@ -904,14 +1036,19 @@ a:visited {
     font-size: 188%;
   }
 
+  .wedding-title {
+    font-size: 1.18em;
+  }
+
   .wedding-date {
     margin-top: 0.52rem;
     font-size: 0.78em;
   }
 
   .wedding-kind {
-    margin-top: 0.2rem;
-    font-size: 0.78em;
+    margin-top: 0.52rem;
+    padding: 0.34rem 0.72rem;
+    font-size: 0.68rem;
   }
   
   .wedding-content {
@@ -924,7 +1061,7 @@ a:visited {
       color-mix(in srgb, var(--bg-secondary) var(--glass-bg-strength), transparent);
     width: 90%;
     border: var(--mobile-part-border-width) solid var(--border-color);
-    border-radius: 100px;
+    border-radius: 0;
     transition: all 0.3s ease;
     text-align: center;
     margin: 2.5% auto;
@@ -981,7 +1118,7 @@ a:visited {
     width: min(1180px, 92vw);
     margin: 14px auto 0;
     padding: 0.9rem 1.25rem;
-    border-radius: 40px;
+    border-radius: 0;
     font-size: 125%;
   }
 
@@ -994,21 +1131,17 @@ a:visited {
     margin-bottom: 0.9rem;
   }
 
-  .rutube-mobile-link {
-    display: none;
-  }
-
   .search-container {
     order: 3;
     width: 100%;
     max-width: 100%;
   }
 
-  .rutube-block {
-    display: flex;
-    margin: 0;
-    width: fit-content;
+  /*
+  .sort-control {
+    padding-left: calc(55% + 28px);
   }
+  */
 
   input#search {
     width: 100%;
@@ -1020,7 +1153,7 @@ a:visited {
     width: min(1180px, 92vw);
     margin: 0 auto 14px;
     border: var(--border-width) solid var(--border-color);
-    border-radius: 100px;
+    border-radius: 0;
     padding: 1rem 1.5rem;
   }
 
@@ -1032,7 +1165,7 @@ a:visited {
     min-height: 250px;
     margin: 18px auto;
     padding-bottom: 0;
-    border-radius: 40px;
+    border-radius: 0;
     background:
       linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)),
       color-mix(in srgb, var(--bg-secondary) var(--glass-bg-strength), transparent);
@@ -1053,7 +1186,7 @@ a:visited {
     object-fit: cover;
     border-right: var(--divider-border-width) solid var(--border-color);
     border-bottom: 0;
-    border-radius: 40px 0 0 40px;
+    border-radius: 0;
   }
 
   .wedding-content {
@@ -1079,7 +1212,7 @@ a:visited {
 
   .wedding-kind {
     margin-top: 5px;
-    font-size: clamp(0.72rem, 1.7vw, 0.86rem);
+    font-size: 0.68rem;
   }
 
   .parts {
@@ -1110,4 +1243,21 @@ a:visited {
 /* Плавный переход для всех элементов */
 * {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header,
+.footer-container,
+.wedding,
+.wedding img,
+.part,
+.telegram-link,
+input#search,
+.search-clear {
+  border-radius: var(--corner-radius);
+}
+
+@media (min-width: 769px) {
+  .wedding img {
+    border-radius: 0;
+  }
 }
